@@ -47,7 +47,7 @@ public class UrlFactory {
             }
 
         }catch (NoSuchElementException e){
-            throw new IllegalArgumentException("Protocolo inválido");
+            throw new IllegalArgumentException("Protocolo de cominicação nao identificado");
         }
 
         return url;
