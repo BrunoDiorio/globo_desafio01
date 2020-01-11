@@ -3,6 +3,8 @@ package com.globo.entity;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.net.MalformedURLException;
+
 import static org.junit.Assert.*;
 
 public class UrlHttpTest {
@@ -47,5 +49,10 @@ public class UrlHttpTest {
     @Test
     public void getParam(){
         assertEquals("user=fulano", url3.getParam());
+    }
+
+    @Test(expected = MalformedURLException.class)
+    public void invalidUrl() throws Exception {
+        new UrlHttp("globoesporte.globo.com/");
     }
 }

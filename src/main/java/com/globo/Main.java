@@ -9,21 +9,24 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        try {
 
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Entrada:");
-            String rawUrl = sc.nextLine();
+        while(true) {
+            try {
 
-            Url url = UrlFactory.decode(rawUrl);
-            System.out.println("Saida:");
-            System.out.println(url);
+                Scanner sc = new Scanner(System.in);
+                System.out.println("Entrada:");
+                String rawUrl = sc.nextLine();
 
-        }catch (IllegalArgumentException | MalformedURLException e){
-            System.out.println(e.getMessage());
+                Url url = UrlFactory.decode(rawUrl);
+                System.out.println("Saida:");
+                System.out.println(url);
 
-        }catch (Exception e){
-            System.out.println("Exeção inesperada");
+            } catch (IllegalArgumentException | MalformedURLException e) {
+                System.out.println(e.getMessage());
+
+            } catch (Exception e) {
+                System.out.println("Exeção inesperada");
+            }
         }
     }
 }

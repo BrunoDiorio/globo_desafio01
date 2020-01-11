@@ -1,7 +1,9 @@
 package com.globo.entity;
 
-import java.net.MalformedURLException;
-
+/**
+ * Classe abstrata para urls informadas
+ * @author diorio
+ */
 public abstract class Url {
 
     protected String uri;
@@ -10,10 +12,6 @@ public abstract class Url {
 
     public Url(String uri){
         this.uri = uri;
-    }
-
-    public String getUri() {
-        return uri;
     }
 
     public String getProtocolo() {

@@ -2,6 +2,10 @@ package com.globo.enums;
 
 import java.util.NoSuchElementException;
 
+/**
+ * Identifica enum pela string name
+ * @author diorio
+ */
 public class IdentifiableEnum {
 
     public static <E extends Enum<E>> E findByName(String name, Class<E> eClass) throws NoSuchElementException{

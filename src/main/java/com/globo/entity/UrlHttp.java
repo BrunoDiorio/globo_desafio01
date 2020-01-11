@@ -4,9 +4,13 @@ import java.net.MalformedURLException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Classe de url com http
+ * @author diorio
+ */
 public class UrlHttp extends Url{
 
-    private static final String REGEX = "(?<protocolo>\\w*):\\/\\/((?<host>[\\w]+)\\.){1}(?<dominio>[^\\/]+)\\/?((?<path>\\w*)\\/)?(?<param>.*)?";
+    private static final String REGEX = "(?<protocolo>\\w*)://((?<host>[\\w]+)\\.)(?<dominio>[^/]+)/?((?<path>\\w*)/)?(?<param>.*)?";
 
     private String host;
     private String path;

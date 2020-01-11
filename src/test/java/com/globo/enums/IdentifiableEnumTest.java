@@ -2,6 +2,8 @@ package com.globo.enums;
 
 import org.junit.Test;
 
+import java.util.NoSuchElementException;
+
 import static org.junit.Assert.*;
 
 public class IdentifiableEnumTest {
@@ -17,7 +19,7 @@ public class IdentifiableEnumTest {
         assertEquals(ProtocoloEnum.FTP,   enumFtp);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = NoSuchElementException.class)
     public void findByNameNomeInvalido() {
         IdentifiableEnum.findByName("htttp",  ProtocoloEnum.class);
     }

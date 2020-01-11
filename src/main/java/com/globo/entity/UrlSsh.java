@@ -4,10 +4,13 @@ import java.net.MalformedURLException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Classe de url com ssh
+ * @author diorio
+ */
 public class UrlSsh extends Url {
 
-
-    private static final String REGEX = "(?<protocolo>\\w*):\\/\\/((?<usuario>[\\w]+)[\\%\\@]){1}((?<senha>[\\w]+)\\@){0,1}(?<dominio>[^\\/]*)";
+    private static final String REGEX = "(?<protocolo>\\w*)://((?<usuario>[\\w]+)[%@])((?<senha>[\\w]+)@)?(?<dominio>[^/]*)";
 
     private String usuario;
     private String senha;

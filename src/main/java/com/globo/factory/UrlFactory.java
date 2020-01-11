@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
  */
 public class UrlFactory {
 
-    public static final String REGEX_PROTOCOLO = "^\\w+";
+    public static final String REGEX_PROTOCOLO = "^(?<protocolo>\\w+)://";
 
     public static Url decode(String rawUrl) throws NoSuchElementException, MalformedURLException {
 
@@ -32,7 +32,7 @@ public class UrlFactory {
         }
 
         try{
-            ProtocoloEnum protocoloEnum = IdentifiableEnum.findByName(m.group(), ProtocoloEnum.class);
+            ProtocoloEnum protocoloEnum = IdentifiableEnum.findByName(m.group("protocolo"), ProtocoloEnum.class);
 
             switch (protocoloEnum){
                 case HTTP:

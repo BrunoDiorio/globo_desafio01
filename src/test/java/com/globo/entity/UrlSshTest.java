@@ -3,6 +3,8 @@ package com.globo.entity;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.net.MalformedURLException;
+
 import static org.junit.Assert.*;
 
 public class UrlSshTest {
@@ -50,5 +52,10 @@ public class UrlSshTest {
         assertEquals("git.com", url2.getDominio());
         assertEquals("git.com", url3.getDominio());
         assertEquals("git.com", url4.getDominio());
+    }
+
+    @Test(expected = MalformedURLException.class)
+    public void invalidUrl() throws Exception {
+        new UrlHttp("git.com/");
     }
 }
