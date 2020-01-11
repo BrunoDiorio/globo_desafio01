@@ -10,23 +10,20 @@ public class Main {
 
     public static void main(String[] args) {
 
-        while(true) {
-            try {
+        try {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Entrada:");
+            String rawUrl = sc.nextLine();
 
-                Scanner sc = new Scanner(System.in);
-                System.out.println("Entrada:");
-                String rawUrl = sc.nextLine();
+            Url url = UrlFactory.decode(rawUrl);
+            System.out.println("Saida:");
+            System.out.println(url);
 
-                Url url = UrlFactory.decode(rawUrl);
-                System.out.println("Saida:");
-                System.out.println(url);
+        } catch (IllegalArgumentException | MalformedURLException e) {
+            System.out.println(e.getMessage());
 
-            } catch (IllegalArgumentException | MalformedURLException e) {
-                System.out.println(e.getMessage());
-
-            } catch (Exception e) {
-                System.out.println("Exeção inesperada");
-            }
+        } catch (Exception e) {
+            System.out.println("Exeção inesperada");
         }
     }
 }
